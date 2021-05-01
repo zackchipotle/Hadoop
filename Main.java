@@ -20,17 +20,18 @@ public class HadoopApp {
 
 	if (otherArgs.length < 3) {
 	    System.out.println("Expected parameters: <job class> <input dir> <output dir>");
+		System.out.println("Job class is either RequestCount or ByteCount");
 	    System.exit(-1);
-	} else if ("WordCount".equalsIgnoreCase(otherArgs[0])) {
-	    job.setReducerClass(WordCount.ReducerImpl.class);
-	    job.setMapperClass(WordCount.MapperImpl.class);
-	    job.setOutputKeyClass(WordCount.OUTPUT_KEY_CLASS);
-	    job.setOutputValueClass(WordCount.OUTPUT_VALUE_CLASS);
-	} else if ("AccessLog".equalsIgnoreCase(otherArgs[0])) {
-	    job.setReducerClass(AccessLog.ReducerImpl.class);
-	    job.setMapperClass(AccessLog.MapperImpl.class);
-	    job.setOutputKeyClass(AccessLog.OUTPUT_KEY_CLASS);
-	    job.setOutputValueClass(AccessLog.OUTPUT_VALUE_CLASS);
+	} else if ("RequestCount".equalsIgnoreCase(otherArgs[0])) {
+	    job.setReducerClass(CodeMapReducer.ReducerImpl.class);
+	    job.setMapperClass(CodeMapReducer.MapperImpl.class);
+	    job.setOutputKeyClass(CodeMapReducer.OUTPUT_KEY_CLASS);
+	    job.setOutputValueClass(CodeMapReducer.OUTPUT_VALUE_CLASS);
+	} else if ("ByteCount".equalsIgnoreCase(otherArgs[0])) {
+	    job.setReducerClass(DateMapReducer.ReducerImpl.class);
+	    job.setMapperClass(DateMapReducer.MapperImpl.class);
+	    job.setOutputKeyClass(DateMapReducer.OUTPUT_KEY_CLASS);
+	    job.setOutputValueClass(DateMapReducer.OUTPUT_VALUE_CLASS);
 	} else {
 	    System.out.println("Unrecognized job: " + otherArgs[0]);
 	    System.exit(-1);
