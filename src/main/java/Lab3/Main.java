@@ -25,15 +25,15 @@ public class Main {
 		System.out.println("Job class is either RequestCount or ByteCount");
 	    System.exit(-1);
 	} else if ("RequestCount".equalsIgnoreCase(otherArgs[0])) {
-	    job.setReducerClass(CodeMapReducer.ReducerImpl.class);
-	    job.setMapperClass(CodeMapReducer.MapperImpl.class);
-	    job.setOutputKeyClass(CodeMapReducer.OUTPUT_KEY_CLASS);
-	    job.setOutputValueClass(CodeMapReducer.OUTPUT_VALUE_CLASS);
+	    job.setReducerClass(CodeMapReduce.ReducerImpl.class);
+	    job.setMapperClass(CodeMapReduce.MapperImpl.class);
+	    job.setOutputKeyClass(CodeMapReduce.OUTPUT_KEY_CLASS);
+	    job.setOutputValueClass(CodeMapReduce.OUTPUT_VALUE_CLASS);
 	} else if ("ByteCount".equalsIgnoreCase(otherArgs[0])) {
-	    job.setReducerClass(DateMapReducer.ReducerImpl.class);
-	    job.setMapperClass(DateMapReducer.MapperImpl.class);
-	    job.setOutputKeyClass(DateMapReducer.OUTPUT_KEY_CLASS);
-	    job.setOutputValueClass(DateMapReducer.OUTPUT_VALUE_CLASS);
+	    job.setReducerClass(DateMapReduce.ReducerImpl.class);
+	    job.setMapperClass(DateMapReduce.MapperImpl.class);
+	    job.setOutputKeyClass(DateMapReduce.OUTPUT_KEY_CLASS);
+	    job.setOutputValueClass(DateMapReduce.OUTPUT_VALUE_CLASS);
 	} else {
 	    System.out.println("Unrecognized job: " + otherArgs[0]);
 	    System.exit(-1);
