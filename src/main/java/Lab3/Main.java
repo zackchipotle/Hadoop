@@ -26,12 +26,12 @@ public class Main {
 	    System.exit(-1);
 	} else if ("RequestCount".equalsIgnoreCase(otherArgs[0])) {
 	    job.setReducerClass(CodeMapReduce.ReducerImpl.class);
-	    job.setMapperClass(CodeMapReduce.MapperImpl.class);
+	    job.setMapperClass(CodeMapReduce.MapperCode.class);
 	    job.setOutputKeyClass(CodeMapReduce.OUTPUT_KEY_CLASS);
 	    job.setOutputValueClass(CodeMapReduce.OUTPUT_VALUE_CLASS);
 	} else if ("ByteCount".equalsIgnoreCase(otherArgs[0])) {
 	    job.setReducerClass(DateMapReduce.ReducerImpl.class);
-	    job.setMapperClass(DateMapReduce.MapperImpl.class);
+	    job.setMapperClass(DateMapReduce.MapperDate.class);
 	    job.setOutputKeyClass(DateMapReduce.OUTPUT_KEY_CLASS);
 	    job.setOutputValueClass(DateMapReduce.OUTPUT_VALUE_CLASS);
 	} else {
