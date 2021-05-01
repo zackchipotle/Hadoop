@@ -1,3 +1,5 @@
+package Lab3;
+
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.StringTokenizer;
